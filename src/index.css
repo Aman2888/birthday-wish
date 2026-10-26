@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-handwriting {
+    font-family: 'Caveat', cursive;
+  }
+  .font-comic {
+    font-family: 'Patrick Hand', cursive;
+  }
+  .font-bubble {
+    font-family: 'Fredoka', 'Quicksand', sans-serif;
+  }
+  .font-serif-display {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+  .font-script {
+    font-family: 'Dancing Script', cursive;
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(3deg);
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+
+.animate-float {
+  animation: float-slow 4s ease-in-out infinite;
+}
+
+.animate-wiggle {
+  animation: wiggle 1s ease-in-out infinite;
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s ease-in-out infinite;
+}
+
+/* Notebook paper texture styling */
+.paper-texture {
+  background-color: #faf6f0;
+  background-image: 
+    radial-gradient(#e5d7ca 0.75px, transparent 0.75px),
+    radial-gradient(#e5d7ca 0.75px, #faf6f0 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #fdf8f4;
+}
+::-webkit-scrollbar-thumb {
+  background: #e2b6b0;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #cf8d84;
+}
