@@ -122,23 +122,7 @@ export const ScreenFinalLove: React.FC<Props> = ({ config, onRestart, onOpenEdit
 
         {/* Footer Actions */}
         <div className="mt-10 pt-6 border-t-2 border-stone-200/80 flex flex-wrap items-center justify-between gap-4">
-          <div className="flex flex-wrap items-center gap-3">
-            <button
-              onClick={onRestart}
-              className="cursor-pointer inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-700 font-bubble text-sm transition-all"
-            >
-              <RotateCcw className="w-4 h-4" />
-              <span>Replay Surprise from Start</span>
-            </button>
-
-            <button
-              onClick={onOpenEdit}
-              className="cursor-pointer inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300 font-bubble text-sm shadow-xs transition-all"
-            >
-              <Edit3 className="w-4 h-4 text-amber-600" />
-              <span>Personalize Details (Names, Letter, Date)</span>
-            </button>
-          </div>
+          
 
           <div className="text-right">
             <span className="font-script text-3xl text-rose-800 font-bold">
