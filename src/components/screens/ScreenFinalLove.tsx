@@ -36,12 +36,12 @@ export const ScreenFinalLove: React.FC<Props> = ({ config, onRestart, onOpenEdit
   };
 
   return (
-    <div className="relative min-h-[90vh] flex flex-col items-center justify-start p-4 sm:p-8 select-none">
+    <div className="relative min-h-[90vh] flex flex-col items-center justify-start p-3 sm:p-8 select-none">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="max-w-4xl w-full bg-[#faf6f0] border-4 border-amber-900/10 rounded-3xl shadow-2xl p-6 sm:p-10 relative overflow-hidden paper-texture my-4"
+        className="max-w-4xl w-full bg-[#fff5f8] border-4 border-pink-200 rounded-3xl shadow-2xl p-5 sm:p-10 relative overflow-hidden paper-texture my-2 sm:my-4"
       >
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
           

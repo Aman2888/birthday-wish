@@ -21,7 +21,7 @@ export interface DinnerInvitation {
   location: string;
   time: string;
   dressCode: string;
-  specialNote: string;
+  // specialNote: string;
 }
 
 export interface BirthdayConfig {
@@ -31,6 +31,8 @@ export interface BirthdayConfig {
   letterHeading: string;
   letterContent: string[];
   dinner: DinnerInvitation;
+  birthdayBoyPhoto?: string;
+  birthdayBoyCaption?: string;
   memories: MemoryItem[];
   coupons: LoveCoupon[];
 }

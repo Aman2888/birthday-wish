@@ -23,7 +23,7 @@
     transform: translateY(0px) rotate(0deg);
   }
   50% {
-    transform: translateY(-10px) rotate(3deg);
+    transform: translateY(-8px) rotate(2deg);
   }
 }
 
@@ -32,7 +32,7 @@
     transform: scale(1);
   }
   50% {
-    transform: scale(1.05);
+    transform: scale(1.04);
   }
 }
 
@@ -53,28 +53,28 @@
   animation: pulse-subtle 2s ease-in-out infinite;
 }
 
-/* Notebook paper texture styling */
+/* Lovely soft light pink paper texture */
 .paper-texture {
-  background-color: #faf6f0;
+  background-color: #fff2f6;
   background-image: 
-    radial-gradient(#e5d7ca 0.75px, transparent 0.75px),
-    radial-gradient(#e5d7ca 0.75px, #faf6f0 0.75px);
-  background-size: 30px 30px;
-  background-position: 0 0, 15px 15px;
+    radial-gradient(#f9a8d4 0.65px, transparent 0.65px),
+    radial-gradient(#f9a8d4 0.65px, #fff2f6 0.65px);
+  background-size: 26px 26px;
+  background-position: 0 0, 13px 13px;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar in soft pink */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #fdf8f4;
+  background: #fdf2f8;
 }
 ::-webkit-scrollbar-thumb {
-  background: #e2b6b0;
+  background: #f472b6;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #cf8d84;
+  background: #db2777;
 }

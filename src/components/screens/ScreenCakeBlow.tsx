@@ -66,12 +66,12 @@ export const ScreenCakeBlow: React.FC<Props> = ({ config, onBackToHub, onNextSur
   };
 
   return (
-    <div className="relative min-h-[90vh] flex flex-col items-center justify-start p-4 sm:p-8 select-none">
+    <div className="relative min-h-[90vh] flex flex-col items-center justify-start p-3 sm:p-8 select-none">
       {/* Top back bar */}
-      <div className="w-full max-w-4xl flex items-center justify-between mb-6">
+      <div className="w-full max-w-4xl flex items-center justify-between gap-2 mb-4 sm:mb-6">
         <button
           onClick={onBackToHub}
-          className="cursor-pointer inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white/80 hover:bg-white text-stone-700 font-bubble text-sm border border-stone-200 shadow-sm transition-all"
+          className="cursor-pointer inline-flex items-center gap-1.5 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/90 hover:bg-white text-stone-700 font-bubble text-xs sm:text-sm border border-pink-200 shadow-xs transition-all"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Surprises Hub</span>
@@ -79,7 +79,7 @@ export const ScreenCakeBlow: React.FC<Props> = ({ config, onBackToHub, onNextSur
 
         <button
           onClick={onNextSurprise}
-          className="cursor-pointer inline-flex items-center gap-1.5 px-5 py-2 rounded-full bg-[#6d2520] hover:bg-[#852c26] text-white font-bubble text-sm shadow-md transition-all font-semibold"
+          className="cursor-pointer inline-flex items-center gap-1.5 px-4 py-1.5 sm:px-5 sm:py-2 rounded-full bg-[#7a251e] hover:bg-[#912c24] text-white font-bubble text-xs sm:text-sm shadow-md transition-all font-semibold"
         >
           <span>Grand Finale ❤️</span>
           <ArrowRight className="w-4 h-4" />
@@ -104,10 +104,10 @@ export const ScreenCakeBlow: React.FC<Props> = ({ config, onBackToHub, onNextSur
         </p>
 
         {/* Interactive Cake Illustration Canvas */}
-        <div className="relative w-80 sm:w-96 h-72 flex flex-col items-center justify-end mb-6">
+        <div className="relative w-72 sm:w-88 h-64 sm:h-72 flex flex-col items-center justify-end mb-6 max-w-full">
           
           {/* Candles Row */}
-          <div className="flex items-end justify-center gap-5 sm:gap-6 z-20 mb-[-12px]">
+          <div className="flex items-end justify-center gap-4 sm:gap-6 z-20 mb-[-12px]">
             {candlesLit.map((isLit, idx) => (
               <div
                 key={idx}
@@ -124,7 +124,7 @@ export const ScreenCakeBlow: React.FC<Props> = ({ config, onBackToHub, onNextSur
                       y: [-1, -3, 0, -2, -1],
                     }}
                     transition={{ repeat: Infinity, duration: 0.9 + idx * 0.1 }}
-                    className="w-4 h-6 rounded-full bg-gradient-to-t from-orange-500 via-amber-300 to-yellow-100 shadow-[0_0_12px_#f59e0b] filter drop-shadow-md"
+                    className="w-3.5 sm:w-4 h-5 sm:h-6 rounded-full bg-gradient-to-t from-orange-500 via-amber-300 to-yellow-100 shadow-[0_0_12px_#f59e0b] filter drop-shadow-md"
                   />
                 ) : (
                   <motion.div
@@ -139,7 +139,7 @@ export const ScreenCakeBlow: React.FC<Props> = ({ config, onBackToHub, onNextSur
 
                 {/* Candle Stick */}
                 <div
-                  className={`w-3.5 h-12 rounded-t-sm shadow-sm transition-colors ${
+                  className={`w-3 sm:w-3.5 h-10 sm:h-12 rounded-t-sm shadow-sm transition-colors ${
                     idx % 2 === 0
                       ? 'bg-gradient-to-b from-rose-300 to-rose-400'
                       : 'bg-gradient-to-b from-amber-200 to-amber-300'
@@ -150,25 +150,25 @@ export const ScreenCakeBlow: React.FC<Props> = ({ config, onBackToHub, onNextSur
           </div>
 
           {/* Strawberry Shortcake Layers */}
-          <div className="relative w-72 sm:w-80 flex flex-col items-center">
+          <div className="relative w-64 sm:w-80 flex flex-col items-center">
             
             {/* Top Tier Frosting */}
-            <div className="relative w-56 sm:w-64 h-16 bg-[#fff7ed] rounded-t-3xl border-3 border-amber-900/10 shadow-md flex items-center justify-around px-4">
-              <span className="text-xl">🍓</span>
-              <span className="text-sm font-handwriting text-rose-500 font-bold">
+            <div className="relative w-52 sm:w-64 h-14 sm:h-16 bg-[#fff7ed] rounded-t-3xl border-3 border-amber-900/10 shadow-md flex items-center justify-around px-3 sm:px-4">
+              <span className="text-lg sm:text-xl">🍓</span>
+              <span className="text-xs sm:text-sm font-handwriting text-rose-500 font-bold truncate max-w-[150px] sm:max-w-none">
                 Happy Bday {config.boyfriendName}
               </span>
-              <span className="text-xl">🍓</span>
+              <span className="text-lg sm:text-xl">🍓</span>
             </div>
 
             {/* Middle Strawberry Cream Band */}
-            <div className="w-64 sm:w-72 h-8 bg-gradient-to-r from-rose-200 via-pink-200 to-rose-200 border-x-3 border-amber-900/10 flex items-center justify-center">
+            <div className="w-56 sm:w-72 h-7 sm:h-8 bg-gradient-to-r from-rose-200 via-pink-200 to-rose-200 border-x-3 border-amber-900/10 flex items-center justify-center">
               <div className="w-full border-t border-dashed border-rose-300"></div>
             </div>
 
             {/* Bottom Tier Cake Base */}
-            <div className="relative w-72 sm:w-80 h-20 bg-[#fde8d0] rounded-b-2xl border-3 border-t-0 border-amber-900/10 shadow-xl flex items-center justify-between px-6">
-              <div className="w-full flex justify-around text-lg">
+            <div className="relative w-64 sm:w-80 h-16 sm:h-20 bg-[#fde8d0] rounded-b-2xl border-3 border-t-0 border-amber-900/10 shadow-xl flex items-center justify-between px-4 sm:px-6">
+              <div className="w-full flex justify-around text-base sm:text-lg">
                 <span>🍒</span>
                 <span>🎂</span>
                 <span>🍒</span>
@@ -178,7 +178,7 @@ export const ScreenCakeBlow: React.FC<Props> = ({ config, onBackToHub, onNextSur
             </div>
 
             {/* Plate */}
-            <div className="w-84 sm:w-92 h-5 bg-stone-100 rounded-full shadow-lg border-2 border-stone-200 -mt-1" />
+            <div className="w-72 sm:w-88 h-4 sm:h-5 bg-stone-100 rounded-full shadow-lg border-2 border-stone-200 -mt-1" />
 
             {/* Knife Cutting Animation Slice */}
             {cakeCut && (

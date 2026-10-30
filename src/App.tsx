@@ -3,12 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { BirthdayConfig, SurpriseScreen } from './types';
 import { DEFAULT_CONFIG } from './data/defaultConfig';
 import { FloatingHearts } from './components/FloatingHearts';
-import { AudioControls } from './components/AudioControls';
 import { NavigationHeader } from './components/NavigationHeader';
 import { EditSurpriseModal } from './components/EditSurpriseModal';
 
@@ -24,7 +23,7 @@ import { ScreenDinnerTicket } from './components/screens/ScreenDinnerTicket';
 import { ScreenCakeBlow } from './components/screens/ScreenCakeBlow';
 import { ScreenFinalLove } from './components/screens/ScreenFinalLove';
 
-const STORAGE_KEY = 'bday_surprise_config_v2';
+const STORAGE_KEY = 'bday_surprise_config_v5_clean_memories';
 
 export default function App() {
   const [config, setConfig] = useState<BirthdayConfig>(() => {
@@ -32,9 +31,14 @@ export default function App() {
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved) {
         const parsed = JSON.parse(saved);
-        if (parsed.memories && parsed.memories[0]?.imageUrl?.includes('Screenshot_')) {
-          parsed.memories = DEFAULT_CONFIG.memories;
-        }
+        // Always ensure memories use the latest image paths defined in photos.ts
+        parsed.memories = DEFAULT_CONFIG.memories.map((dm, idx) => ({
+          ...dm,
+          title: parsed.memories?.[idx]?.title || dm.title,
+          caption: parsed.memories?.[idx]?.caption || dm.caption,
+          date: parsed.memories?.[idx]?.date || dm.date,
+          imageUrl: dm.imageUrl,
+        }));
         return { ...DEFAULT_CONFIG, ...parsed };
       }
     } catch {
@@ -52,7 +56,6 @@ export default function App() {
     cake: false,
   });
 
-  // Save config changes to localStorage
   const handleSaveConfig = (newConfig: BirthdayConfig) => {
     setConfig(newConfig);
     try {
@@ -62,7 +65,6 @@ export default function App() {
     }
   };
 
-  // Record opened surprises
   const handleOpenSurprise = (screen: 'read-me' | 'fav-memories' | 'dinner-ticket' | 'cake-blow' | 'final-love') => {
     if (screen === 'read-me') {
       setOpenedSurprises((prev) => ({ ...prev, readMe: true }));
@@ -78,14 +80,11 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#faf5f0] text-[#4a2e2b] flex flex-col relative selection:bg-rose-200 selection:text-rose-900">
-      {/* Floating background hearts */}
+    <div className="min-h-screen bg-[#fff0f5] text-[#582030] flex flex-col relative selection:bg-pink-200 selection:text-pink-900">
+      {/* Floating background hearts in light pink */}
       <FloatingHearts />
 
-      {/* Floating audio controls */}
-      <AudioControls />
-
-      {/* Top navigation progress bar */}
+      {/* Top navigation header with integrated audio controls & mobile row */}
       <NavigationHeader
         currentScreen={currentScreen}
         onNavigate={(screen) => {
@@ -180,6 +179,7 @@ export default function App() {
               transition={{ duration: 0.35 }}
             >
               <ScreenSurprisesHub
+                config={config}
                 openedSurprises={openedSurprises}
                 onOpenSurprise={handleOpenSurprise}
               />
@@ -280,7 +280,7 @@ export default function App() {
         </AnimatePresence>
       </main>
 
-      {/* Edit/Personalize Modal */}
+      {/* Edit Details Modal */}
       <EditSurpriseModal
         isOpen={isEditOpen}
         onClose={() => setIsEditOpen(false)}

@@ -33,12 +33,12 @@ export const ScreenDinnerTicket: React.FC<Props> = ({ config, onBackToHub, onNex
   };
 
   return (
-    <div className="relative min-h-[90vh] flex flex-col items-center justify-start p-4 sm:p-8 select-none">
+    <div className="relative min-h-[90vh] flex flex-col items-center justify-start p-3 sm:p-8 select-none">
       {/* Top back & forward navigation */}
-      <div className="w-full max-w-4xl flex items-center justify-between mb-6">
+      <div className="w-full max-w-4xl flex items-center justify-between gap-2 mb-4 sm:mb-6">
         <button
           onClick={onBackToHub}
-          className="cursor-pointer inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white/80 hover:bg-white text-stone-700 font-bubble text-sm border border-stone-200 shadow-sm transition-all"
+          className="cursor-pointer inline-flex items-center gap-1.5 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/90 hover:bg-white text-stone-700 font-bubble text-xs sm:text-sm border border-pink-200 shadow-xs transition-all"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Surprises Hub</span>
@@ -46,32 +46,32 @@ export const ScreenDinnerTicket: React.FC<Props> = ({ config, onBackToHub, onNex
 
         <button
           onClick={onNextSurprise}
-          className="cursor-pointer inline-flex items-center gap-1.5 px-5 py-2 rounded-full bg-[#6d2520] hover:bg-[#852c26] text-white font-bubble text-sm shadow-md transition-all font-semibold"
+          className="cursor-pointer inline-flex items-center gap-1.5 px-4 py-1.5 sm:px-5 sm:py-2 rounded-full bg-[#7a251e] hover:bg-[#912c24] text-white font-bubble text-xs sm:text-sm shadow-md transition-all font-semibold"
         >
-          <span>Next: Birthday Cake & Finale</span>
+          <span>Next: Cake & Finale</span>
           <ArrowRight className="w-4 h-4" />
         </button>
       </div>
 
-      <div className="w-full max-w-3xl flex flex-col items-center">
-        
+      <div className="w-full max-w-3xl flex flex-col items-center px-1">
+
         {/* Title Tag */}
-        <div className="inline-block px-6 py-2 rounded-2xl bg-white/90 border border-stone-200 shadow-xs mb-4">
-          <h2 className="font-bubble text-2xl sm:text-3xl font-extrabold text-[#7a251e] tracking-wide">
+        <div className="inline-block px-5 py-1.5 sm:px-6 sm:py-2 rounded-2xl bg-white/95 border border-pink-200 shadow-xs mb-3">
+          <h2 className="font-bubble text-xl sm:text-3xl font-extrabold text-[#7a251e] tracking-wide">
             Yeyy.!! You&apos;re Invited to
           </h2>
         </div>
 
-        {/* Vintage Red Ticket (matching Screenshot 9) */}
+        {/* Vintage Red Ticket */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="relative w-full max-w-2xl bg-[#c0433b] text-white rounded-3xl shadow-2xl p-6 sm:p-8 my-4 overflow-hidden border-2 border-rose-300/40"
+          className="relative w-full max-w-2xl bg-[#c0433b] text-white rounded-3xl shadow-xl p-5 sm:p-8 my-2 sm:my-4 overflow-hidden border-2 border-rose-300/40"
         >
-          {/* Perforated semi-circle notches on ticket sides */}
-          <div className="absolute top-1/2 -left-5 -translate-y-1/2 w-10 h-10 rounded-full bg-[#faf5f0] border-r-2 border-stone-300/60 shadow-inner" />
-          <div className="absolute top-1/2 -right-5 -translate-y-1/2 w-10 h-10 rounded-full bg-[#faf5f0] border-l-2 border-stone-300/60 shadow-inner" />
+          {/* Perforated notches on ticket sides */}
+          <div className="absolute top-1/2 -left-4 -translate-y-1/2 w-8 h-8 rounded-full bg-[#fff0f5] border-r-2 border-stone-300/60 shadow-inner" />
+          <div className="absolute top-1/2 -right-4 -translate-y-1/2 w-8 h-8 rounded-full bg-[#fff0f5] border-l-2 border-stone-300/60 shadow-inner" />
 
           {/* Heart Band-Aid sticker on top left */}
           <div className="absolute -top-1 left-8 w-16 h-7 bg-amber-100 rounded-md rotate-[-25deg] shadow-md border border-amber-300 flex items-center justify-center pointer-events-none">
@@ -84,7 +84,7 @@ export const ScreenDinnerTicket: React.FC<Props> = ({ config, onBackToHub, onNex
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
-            
+
             {/* Left section: Event Details */}
             <div className="md:col-span-7 flex flex-col text-left pl-2 sm:pl-4">
               <h1 className="font-bubble text-3xl sm:text-4xl font-extrabold tracking-wide leading-tight mb-4 text-white drop-shadow-sm">
@@ -126,11 +126,10 @@ export const ScreenDinnerTicket: React.FC<Props> = ({ config, onBackToHub, onNex
               {/* RSVP Action */}
               <button
                 onClick={handleAcceptTicket}
-                className={`cursor-pointer inline-flex items-center gap-2 px-6 py-2.5 rounded-full font-bubble text-sm font-bold shadow-md transition-all ${
-                  ticketAccepted
+                className={`cursor-pointer inline-flex items-center gap-2 px-6 py-2.5 rounded-full font-bubble text-sm font-bold shadow-md transition-all ${ticketAccepted
                     ? 'bg-emerald-500 text-white border-2 border-white'
                     : 'bg-white text-[#7a251e] hover:bg-rose-100 hover:scale-105'
-                }`}
+                  }`}
               >
                 {ticketAccepted ? (
                   <>
@@ -157,79 +156,22 @@ export const ScreenDinnerTicket: React.FC<Props> = ({ config, onBackToHub, onNex
                   NO. #BDAY-2026
                 </span>
               </div>
-              <span className="text-[11px] font-comic text-rose-200 text-center mt-3">
+              {/* <span className="text-[11px] font-comic text-rose-200 text-center mt-3">
                 {config.dinner.specialNote}
-              </span>
+              </span> */}
             </div>
           </div>
         </motion.div>
 
-        {/* Bonus Section: Love Coupons for Boyfriend */}
-        <div className="w-full mt-10 pt-8 border-t border-stone-200">
-          <div className="text-center mb-6">
-            <span className="px-3 py-1 bg-amber-100 text-amber-800 rounded-full font-bubble text-xs tracking-wider uppercase font-bold">
-              Special Boyfriend Perks
-            </span>
-            <h2 className="font-bubble text-2xl sm:text-3xl font-extrabold text-[#6d2520] mt-1">
-              Redeemable Love Coupons
-            </h2>
-            <p className="font-comic text-stone-500 text-sm">
-              Click any coupon to redeem it whenever you want!
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {coupons.map((coupon) => (
-              <motion.div
-                key={coupon.id}
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                onClick={() => handleRedeemCoupon(coupon.id)}
-                className={`cursor-pointer p-4 rounded-2xl border-2 transition-all relative overflow-hidden text-left ${
-                  coupon.isRedeemed
-                    ? 'bg-stone-100 border-stone-300 opacity-70'
-                    : 'bg-white border-rose-200 shadow-md hover:shadow-lg'
-                }`}
-              >
-                {coupon.isRedeemed && (
-                  <div className="absolute inset-0 bg-stone-900/10 backdrop-blur-[1px] flex items-center justify-center z-10">
-                    <span className="font-bubble text-lg font-extrabold text-rose-700 bg-white/95 px-4 py-1 rounded-full border-2 border-rose-600 rotate-[-8deg] shadow-lg">
-                      CLAIMED / REDEEMED ✓
-                    </span>
-                  </div>
-                )}
-
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-[10px] font-bubble tracking-widest uppercase bg-rose-50 text-rose-700 px-2.5 py-0.5 rounded-full font-bold">
-                    {coupon.badge}
-                  </span>
-                  <Gift className="w-4 h-4 text-rose-400" />
-                </div>
-
-                <h3 className="font-bubble text-lg font-bold text-[#5a2722] mb-1 leading-snug">
-                  {coupon.title}
-                </h3>
-                <p className="font-comic text-stone-500 text-xs leading-relaxed">
-                  {coupon.description}
-                </p>
-
-                <div className="mt-3 pt-2 border-t border-stone-100 flex items-center justify-between text-xs text-rose-700 font-comic font-semibold">
-                  <span>{coupon.isRedeemed ? 'Tap to undo' : 'Tap to redeem ✨'}</span>
-                  <span>🎟️</span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
 
         {/* Bottom CTA to cake blowing and final message */}
-        <div className="mt-10 pt-6 border-t border-stone-200 flex flex-col sm:flex-row items-center justify-between gap-4 w-full">
-          <p className="font-comic text-stone-500 text-sm">
+        <div className="mt-8 pt-6 border-t border-pink-200 flex flex-col sm:flex-row items-center justify-between gap-4 w-full">
+          <p className="font-comic text-stone-600 text-sm text-center sm:text-left">
             All 3 surprises opened! Now let&apos;s cut your birthday cake! 🎂
           </p>
           <button
             onClick={onNextSurprise}
-            className="cursor-pointer inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#6d2520] hover:bg-[#852c26] text-white font-bubble text-base shadow-md font-bold"
+            className="cursor-pointer inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#7a251e] hover:bg-[#912c24] text-white font-bubble text-sm sm:text-base shadow-md font-bold"
           >
             <span>Blow Candle & Cut Cake 🎂</span>
             <ArrowRight className="w-4 h-4" />
