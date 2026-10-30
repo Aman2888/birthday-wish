@@ -1,3 +1,5 @@
+import memeCat from '../../assets/images/meme_cat_sunglasses_gun_1792993739054.jpg';
+
 import React from 'react';
 import { motion } from 'motion/react';
 import { sound } from '../../utils/audio';
@@ -40,7 +42,7 @@ export const ScreenGunWarning: React.FC<Props> = ({ onGoBack }) => {
           className="relative w-72 sm:w-84 aspect-square rounded-3xl overflow-hidden shadow-2xl border-4 border-rose-300 mb-6 bg-white"
         >
           <img
-            src="/src/assets/images/meme_cat_sunglasses_gun_1792993739054.jpg"
+            src={memeCat}
             alt="Cat with pink sunglasses and gun meme"
             referrerPolicy="no-referrer"
             className="w-full h-full object-cover"

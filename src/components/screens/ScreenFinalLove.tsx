@@ -1,3 +1,5 @@
+
+import screamingCat from '../../assets/images/screaming_cat_baby_1792993741092.jpg';
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import confetti from 'canvas-confetti';
@@ -105,7 +107,7 @@ export const ScreenFinalLove: React.FC<Props> = ({ config, onRestart, onOpenEdit
               title="Click the screaming baby cat!"
             >
               <img
-                src="/src/assets/images/screaming_cat_baby_1792993741092.jpg"
+                src={screamingCat}
                 alt="Cute cat screaming BABYYYY I love you"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"

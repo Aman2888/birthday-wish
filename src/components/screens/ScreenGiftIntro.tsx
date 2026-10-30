@@ -1,3 +1,5 @@
+import cuteGiftBox from '../../assets/images/cute_gift_box_1792993737756.jpg';
+
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { sound } from '../../utils/audio';
@@ -60,7 +62,8 @@ export const ScreenGiftIntro: React.FC<Props> = ({ onNext, onBack }) => {
         >
           <div className="w-56 sm:w-68 aspect-square rounded-3xl overflow-hidden shadow-xl border-4 border-white bg-white group-hover:shadow-2xl transition-all duration-300">
             <img
-              src="/src/assets/images/cute_gift_box_1792993737756.jpg"
+              // src="/src/assets/images/cute_gift_box_1792993737756.jpg"
+              src={cuteGiftBox}
               alt="Kawaii 3D gift box with green bow"
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"

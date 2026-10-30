@@ -1,3 +1,5 @@
+
+import cuteBears from '../../assets/images/cute_bears_hugging_1792993739765.jpg';
 import React from 'react';
 import { motion } from 'motion/react';
 import confetti from 'canvas-confetti';
@@ -48,7 +50,7 @@ export const ScreenLoveConfirmed: React.FC<Props> = ({ onShowSurprise }) => {
           title="Bears hugging! Click for chimes"
         >
           <img
-            src="/src/assets/images/cute_bears_hugging_1792993739765.jpg"
+            src={cuteBears}
             alt="Cute cartoon bears hugging and laughing"
             referrerPolicy="no-referrer"
             className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"

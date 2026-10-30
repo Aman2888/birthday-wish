@@ -1,3 +1,5 @@
+
+import birthdayCakeCat from '../../assets/images/cat_birthday_cake_roses_1792993741439.jpg';
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import confetti from 'canvas-confetti';
@@ -83,7 +85,7 @@ export const ScreenReadMe: React.FC<Props> = ({ config, onBackToHub, onNextSurpr
               title="Click the kitten for meow!"
             >
               <img
-                src="/src/assets/images/cat_birthday_cake_roses_1792993741439.jpg"
+                src={birthdayCakeCat}
                 alt="Birthday kitten with cake and roses bouquet"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"

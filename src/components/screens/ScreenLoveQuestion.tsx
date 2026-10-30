@@ -1,3 +1,5 @@
+
+import shyKitten from '../../assets/images/shy_white_kitten_1792993738478.jpg';
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import confetti from 'canvas-confetti';
@@ -74,7 +76,7 @@ export const ScreenLoveQuestion: React.FC<Props> = ({ onSayYes, onSayNo }) => {
           title="Click the shy kitten!"
         >
           <img
-            src="/src/assets/images/shy_white_kitten_1792993738478.jpg"
+            src={shyKitten}
             alt="Shy cartoon cat asking Do you love me"
             referrerPolicy="no-referrer"
             className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"

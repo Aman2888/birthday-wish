@@ -1,3 +1,4 @@
+import cuteCats from '../../assets/images/cute_cats_cuddle_1792993737764.jpg';
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { BirthdayConfig } from '../../types';
@@ -66,7 +67,7 @@ export const ScreenWelcome: React.FC<Props> = ({ config, onNext }) => {
         >
           <div className="relative w-64 sm:w-76 md:w-84 aspect-square rounded-3xl overflow-hidden shadow-xl border-4 border-white/90 bg-white group-hover:shadow-2xl transition-all duration-300">
             <img
-              src="/src/assets/images/cute_cats_cuddle_1792993737764.jpg"
+              src={cuteCats}
               alt="Cute cartoon cats cuddling"
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
