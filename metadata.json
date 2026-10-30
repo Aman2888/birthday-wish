@@ -1,5 +1,5 @@
 {
-  "name": "Funny Birthday Surprise for Boyfriend",
+  "name": "Birthday Surprise",
   "description": "An interactive, animated cartoon-style birthday surprise website with playful quizzes, cute cat and bear animations, letters, memories, and date invitation.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
